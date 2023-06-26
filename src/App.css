@@ -1,0 +1,31 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 2px;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  color: white;
+  font-size: 0.75em;
+  padding: 0px;
+}
+
+.treemap-custom-tooltip {
+  background-color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
