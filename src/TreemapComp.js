@@ -74,16 +74,16 @@ const TreeMapComponent = ({data_source}) => {
 
 
 const CustomizedContent = (data) => {
-    const { x, y, width, height, value, name, price, MDD} = data
+    const { x, y, width, height, value, ticker, price, MDD} = data
     const sizzze = height * width
     let   BigFont   = sizzze > 12000 ? 24 : sizzze > 6000 ? 18 : sizzze > 1500 ? 11 : 10
     const SmallFont = sizzze > 12000 ? 14 : sizzze > 6000 ? 11 : sizzze > 1500 ? 8  : 5
     const TopFontGap= sizzze > 12000 ? -4 : sizzze > 6000 ? -2 : sizzze > 1500 ? 2  : 15
     const FontGap   = sizzze > 12000 ? 18 : sizzze > 6000 ? 14 : sizzze > 1500 ? 9  : 5
-    BigFont = Math.min(BigFont, Math.ceil(width / (name ? name.length: 1)*1.4))
+    BigFont = Math.min(BigFont, Math.ceil(width / (ticker ? ticker.length: 1)*1.4))
     return (
         <g>
-            <a href={"https://finance.yahoo.com/quote/" + name} target="_blank" rel="noopener noreferrer" alt={"SOKAY"}>
+            <a href={"https://finance.yahoo.com/quote/" + ticker} target="_blank" rel="noopener noreferrer" alt={"SOKAY"}>
              <rect
                 x={x}
                 y={y}
@@ -105,7 +105,7 @@ const CustomizedContent = (data) => {
                 fill="#fff"
                 fontSize={SmallFont}
             >
-            <tspan x={x + width / 2} fontSize={BigFont} dy={TopFontGap}>{name}</tspan>
+            <tspan x={x + width / 2} fontSize={BigFont} dy={TopFontGap}>{ticker}</tspan>
             {sizzze > 1500 && <tspan x={x + width / 2} fontWeight={200} dy={FontGap}>${price}</tspan>}
             {sizzze > 1500 && <tspan x={x + width / 2} fontWeight={200} dy={FontGap}>-{MDD} %</tspan>}
             </text>
