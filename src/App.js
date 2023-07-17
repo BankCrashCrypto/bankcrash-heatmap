@@ -7,7 +7,7 @@ const App = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:5000/bank_mdds')
+    fetch('http://localhost:8080/bank_mdds')
       .then(response => {
         return response.json(); // Explicitly return the promise
       })
